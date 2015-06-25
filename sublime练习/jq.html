@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>jquery</title>
 	<script type="text/javascript" src="jquery 1.10.1/jquery-1.10.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
 	
@@ -34,14 +34,82 @@
           jQuery("#div1").html(jQuery("#div2").html());
          }
          </script>-->
-         <!--jquery 2.2 element选择器 寻找铅笔-->
+         <!--jquery 2.2 element选择器 寻找铅笔 click是保留字，不可以使用为变量或者函数名
          <button id="btn" onclick="onClick()">hhhhhhh</button>
-		 <!-- click为保留字 ，不能使用-->
          <script type="text/javascript">
   		 function onClick(){
   		 	alert("hahaha");
 	        $("#btn").attr("disabled","true");
 }         
+           </script>-->
+           <!--2.3类选择器 
+           <div class="green">请向我看齐，我是绿色的</div>
+           <div class="red" onclick="onClick()">我是红色的，爱看不看</div>
+           <script type="text/javascript">
+ 				function onClick(){
+ 					$(".green").html($(".red").html());
+ 				}
            </script>
-</body>
+           -->
+           <!--2.4 *选择器的使用
+           <form>
+           	<button>button</button>
+           	<input type="text"/>
+           	<input type="radio"/>
+           	<input type="checkbox"/>
+           </form>
+           <script type="text/javascript">
+           		$("form *").attr("disabled","false");
+           </script>
+           -->
+           <!--2.5 多个选择器使用逗号隔开
+           <div class="green">你看我是绿色的</div>
+           <div class="red">你看我是hong色的</div>
+           <div class="blue">你看我是lan色的</div>
+           <script type="text/javascript">
+           $(".green,.red").html("呵呵哒")；
+           </script>-->
+            <!--2.6层次选择器 在2.4中有涉及：是所有的后代，包括子辈，孙辈，重孙辈。。。-->
+            <!--2.7parent->child选择器 ：
+            parent > child选择器的范围要小些，它所选择的目标是子集元素，相当于一个家庭中的子辈们，但不包括孙辈
+    			<div>
+    				<p>
+    					<label></label>
+    				</p>
+    				<label></label>
+    				<span>我的中国心！</span>
+    			</div>
+    			<script type="text/javascript">
+    			$("div>label").css("border","solid 2px red");
+    			</script>-->
+    			<!--2.8 prev+next选择器：可以查找与“prev”元素紧邻的下一个“next”元素；
+    			其中参数prev为任何有效的选择器，参数“next”为另外一个有效选择器，它们之间的“+”表示一种上下的层次关系，也就是说，“prev”元素最紧邻的下一个元素由“next”选择器返回的并且只返回唯的一个元素。
+				<div>
+    				<p>
+    					<label></label>
+    				</p>
+    				<label></label>
+    				<label></label>
+    				<span>我的中国心！</span>
+    			</div>
+    			<script type="text/javascript">
+    				$("p+label").css("background","red");
+    			</script>-->
+				<!--prev ~ siblings选择器:与上一节中介绍的prev + next层次选择器相同，prev ~ siblings选择器也是查找prev 元素之后的相邻元素，但前者只获取第一个相邻的元素，而后者则获取prev 元素后面全部相邻的元素,通过“~”符号形成一种层次相邻的关系，表明siblings选择器获取的元素都是prev元素之后的同辈元素。
+       			<div>
+    				<p>
+    					<label></label>
+    				</p>
+    				<label></label>
+    				<label>
+    				     <label>
+    				     	
+    				     </label>
+    				</label>
+    				<span>我的中国心！</span>
+    			</div>
+    			<script type="text/javascript">
+    					$("p~label").css("background","red");
+    			</script>-->
+       </body>
 </html>
