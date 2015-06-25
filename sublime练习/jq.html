@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+	<script type="text/javascript" src="jquery 1.10.1/jquery-1.10.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+	
+     <!-- jquery 1.1环境	
+       <div id="test">Hello iMooc!</div>
+        <button onclick="sayHello()">点我！</button>
+        
+        <script type="text/javascript">
+            function sayHello(){
+                $("#test").show();
+            }
+        </script> 
+        -->
+       <!--jquery 1.2熟悉
+        <div> 我是空的 </div>
+        <div> heheda</div>
+        <script type="text/javascript">
+         $("div").html("哈哈哈哈");
+         </script>
+         -->
+         <!--jquery 2.1 #id选择器
+         <div id="div1" onclick="onClick()">我的</div>
+         <div id="div2">你的</div>
+         <script type="text/javascript">
+         function onClick(){
+         // 使用jQuery 代替 $ 防止与其他的库冲突
+          jQuery("#div1").html(jQuery("#div2").html());
+         }
+         </script>-->
+         <!--jquery 2.2 element选择器 寻找铅笔-->
+         <button id="btn" onclick="onClick()">hhhhhhh</button>
+         <script type="text/javascript">
+  		 function onClick(){
+  		 	alert("hahaha");
+	        $("#btn").attr("disabled","true");
+}         
+           </script>
+</body>
+</html>
