@@ -111,5 +111,455 @@
     			<script type="text/javascript">
     					$("p~label").css("background","red");
     			</script>-->
-       </body>
+    		<!--jQuery3-->
+    		<!--3.1过滤选择器：该类型的选择器是根据某过滤规则进行元素的匹配，书写时以“：”号开头,通常用于查找集合元素中的某一位置的单个元素
+    		:first过滤选择器的功能是获取第一个元素，常常与其它选择器一起使用，获取指定的一组元素中的第一个元素。--> 
+        	<!--<div>改变最后一行的颜色</div>
+        	<br/>
+        	<ol>
+        		<li>西瓜</li>
+        		<li>栗子</li>
+        		<li>葡萄</li>
+        		<li>香蕉</li>
+        		<li>苹果</li>
+        		<li>橘子</li>
+        	</ol>
+        	<script type="text/javascript">
+        	$("li:first,li:last").css("color","red");
+        	</script>-->
+        	<!--:eq(index)过滤选择器:如果想从一组标签元素数组中，灵活选择任意的一个标签元素
+        	其中参数index表示索引号（即：一个整数），它从0开始，如果index的值为3，表示选择的是第4个元素。-->
+           <!--	<ul>
+        		<li>香蕉</li>
+        		<li>香蕉</li>
+        		<li>香蕉</li>
+        		<li>香蕉</li>
+        		<li>香蕉</li>
+        		<li>香蕉</li>
+        	</ul>
+        	<script type="text/javascript">
+        	$("li:eq(3)").css("color","red");
+        	</script>-->
+        	<!--3.3:contains(text)过滤选择器:与上一节介绍的:eq(index)选择器按索引查找元素相比，有时候我们可能希望按照文本内容来查找一个或多个元素，那么使用:contains(text)选择器会更加方便， 它的功能是选择包含指定字符串的全部元素，它通常与其他元素结合使用，获取包含“text”字符串内容的全部元素对象。其中参数text表示页面中的文字。-->
+        	<!-- <ol>
+            <li>强大的"jQuery"</li>
+            <li>"javascript"也很实用</li>
+            <li>"jQuery"前端必学</li>
+            <li>"java"是一种开发语言</li>
+            <li>前端利器——"jQuery"</li>
+        	 </ol>
+        	 <script type="text/javascript">
+ 				$("li:contains('jQuery')").css("color",'blue');
+        	 </script>
+        	 -->
+        	 <!--3.4 :has(selector)过滤选择器:使用包含的元素名称来过滤，:has(selector)过滤选择器的功能是获取选择器中包含指定元素名称的全部元素，其中selector参数就是包含的元素名称，是被包含元素。-->
+     		<!--<ol>
+            <li><p>我是P先生</p></li>
+            <li><label>L妹纸就是我</label></li>
+            <li><p>我也是P先生</p></li>
+            <li><label>我也是L妹纸哦</label></li>
+            <li><p>P先生就是我哦</p></li>
+        	</ol>
+        	<script type="text/javascript">
+        	$("li:has('p')").css("color","red");
+        	</script>-->
+        	<!--3.5 :hidden过滤选择器：获取全部不可见的元素，这些不可见的元素中包括type属性值为hidden的元素。-->
+        	<!--<h3>hahahaahahah</h3>
+        	<input id="in" type="hidden" value="hello" />
+        	<div></div>
+        	<script type="text/javascript">
+  				var $htmll= $("input:hidden").val();
+  				$("div").html($htmll);
+        	</script>-->
+        	<!--3.6  :visiable 过滤选择器：获取的是全部可见的元素，也就是说，只要不将元素的display属性值设置为“none”，那么，都可以通过该选择器获取。
+        	-->
+        	<!--<ul>
+        		<li style="display:none">蓝色</li>
+        		<li>蓝色</li>
+        		<li>蓝色</li>
+        		<li style="display:none">蓝色</li>
+        		<li>蓝色</li>
+        	</ul>
+        	<script type="text/javascript">
+        		$("li:visible").css("color","blue");
+        	</script>-->
+        	<!--3.7  [attribute=value]属性选择器:获取与属性名和属性值完全相同的全部元素，其中[]是专用于属性选择器的括号符，参数attribute表示属性名称，value参数表示属性值。-->
+        <!--	<ul>
+        		<li title="最爱">香蕉</li>
+        		<li title="最爱">香蕉</li>
+        		<li title="最爱">香蕉</li>
+        		<li title="最爱">香蕉</li>
+				<li title="哎">橘子</li>
+				<li title="哎">橘子</li>
+				<li title="哎">橘子</li>
+        	</ul>
+    		<script type="text/javascript">
+    		$("li[title='哎']").css('color','red');
+    		</script>-->
+    		<!--3.8  [attribute!=value]属性选择器的功能是获取不包含属性名，或者与属性名和属性值不相同的全部元素，其中[]是专用于属性选择器的括号符，参数attribute表示属性名称，value参数表示属性值。-->
+     		<!--3.9 [attribute*=value]属性选择器:它可以获取属性值中包含指定内容的全部元素，其中[]是专用于属性选择器的括号符，参数attribute表示属性名称，value参数表示对应的属性值。-->
+     		<!-- <ul>
+            <li title="蔬菜">茄子</li>
+            <li title="水果">香蕉</li>
+            <li title="蔬菜">芹菜</li>
+            <li title="人参果">小西红柿</li>
+            <li title="水果">西瓜</li>
+        	 </ul>
+        	 <script type="text/javascript">
+  			 $("li[title*='果']").css("color","red");
+        	 </script>-->
+     	 <!-- <ul>
+       	<li> 我的中国新 ！</li>
+       	<li class="close">我的中国心</li>
+       	<li class="close">我的中国心</li>
+       	<li class="close">我的中国心</li>
+       	<li class="close">我的中国心</li>
+       	<li class="close">我的中国心</li>
+		<li> halo</li>
+       </ul>
+       <a href="#" onclick="mo_le()">更多</a>
+       <script type="text/javascript">
+       		function mo_le(){
+       			if($("a").html().contains("更多")){
+       			
+       				$("li[class='close']").show();
+                    $("li[class='close']").removeClass("close").addClass("open");
+       				$("a").html("简化");
+       			}
+       			else{
+       			$("li[class='open']").hide();
+                    $("li[class='open']").removeClass("open").addClass("close");
+       				$("a").html("更多");
+       			}
+       		}
+       </script>-->
+       <!--3.10 :first-child子元素过滤选择器 ，使用:first过滤选择器可以获取指定父元素中的首个子元素，但该选择器返回的只有一个元素，并不是一个集合，
+		而使用:first-child子元素过滤选择器则可以获取每个父元素中返回的首个子元素，它是一个集合，常用多个集合数据的选择处理。-->
+			<!--3.11 :last-child子元素过滤选择器:与:first-child子元素过滤选择器功能相反，:last-child子元素过滤选择器的功能是获取每个父元素中返回的最后一个子元素，它也是一个集合，常用多个集合数据的选择处理。-->
+		  <!-- <ul>
+		     <li>我的就是我的</li>
+		     <li>我的就是我的</li>
+		     <li>我的就是我的</li>
+		     <li>我的就是我的</li>
+		     <li>我的就是我的</li>
+		   </ul>
+		   <ul>
+		     <li>你的也是我的</li>
+		     <li>你的也是我的</li>
+		     <li>你的也是我的</li>
+		     <li>你的也是我的</li>
+		     <li>你的也是我的</li>
+		   </ul>
+		   <script type="text/javascript">
+		   $("li:first-child").css("color","red");
+		   $("li:last-child").css("color","blue");
+		   </script>-->
+		   <!--4.1 :input表单选择器：返回全部的表单元素，不仅包括所有<input>标记的表单元素，而且还包括<textarea>、<select> 和 <button>标记的表单元素，因此，它选择的表单元素是最广的。-->
+		   <!--<form id="formId" action="#">
+		   	<input type="text" value="hello"/>
+		   	<button value="lo">我天</button>
+			<textarea rows="3" cols="10"></textarea>
+			<select><option>Option</option></select>
+		   </form>
+		   <script type="text/javascript">
+		   //#formId 与 :input 之间是有一个空格；
+		   		$("#formId:input").addClass('red');
+		   </script>
+		   -->
+		   <!--4.2 :text表单文本选择器:text表单文本选择器可以获取表单中全部单行的文本输入框元素，只获取单行的文本输入框元素，对于<textarea>区域文本、按钮元素无效。-->
+			<!--<form id="formId" action="#">
+		   	<input type="text" value="hello"/>
+		   	<button value="lo">我天</button>
+			<textarea rows="3" cols="10"></textarea>
+			<select><option>Option</option></select>
+		    </form>
+		    <script type="text/javascript">
+		  	  $("#formId :text").addClass('red');	
+		    </script>-->
+		    <!--4.3 :password表单密码选择器：它的功能是获取表单中全部的密码输入文本框元素。同上-->
+		    <!--4.4  :radio单选按钮选择器：获取表单中的全部单选按钮元素。同上-->
+			<!--4.5 :checkbox复选框选择器 ：表单中的复选框常用于多项数据的选择，使用:checkbox选择器可以快速定位并获取表单中的复选框元素-->
+			<!--<form id="formId" action="#">
+				<input type="button" value="Button" />
+				<input type="checkbox" id="checkbox1" />
+				<label  for="checkbox1">苹果</label>
+				<input type="checkbox" id="checkbox2" />
+				<label  for="checkbox2">香蕉</label>
+				<input type="checkbox" id="checkbox3" />
+				<label  for="checkbox3">橘子</label>
+			</form>
+			<script type="text/javascript">
+		 		$("#formId :checkbox").attr("checked","true");
+			</script>-->
+			<!--4.6 :submit提交按钮选择器 一个表单中只允许有一个“type”属性值为“submit”的提交按钮，使用:submit选择器可获取表单中的这个提交按钮元素。-->
+			<!--<form id="formId" action="#">
+				<input type="button" value="Button" />
+				<input type="checkbox" id="checkbox1" />
+				<label  for="checkbox1">苹果</label>
+				<input type="checkbox" id="checkbox2" />
+				<label  for="checkbox2">香蕉</label>
+				<input type="checkbox" id="checkbox3" />
+				<label  for="checkbox3">橘子</label>
+				<input type="submit" value="提交" />
+				<button>哈哈哈</button>
+			</form>
+			<script type="text/javascript">
+			//submit 需要使用input 做前置定位；
+		    $("#formId input:submit").css("color","blue");
+			</script>-->
+			<!--4.8 :button表单按钮选择器使用:button选择器能获取且只能获取“type”属性值为“button”的<input>和<button>这两类普通按钮元素。-->
+			<!--<form id="frmTest" action="#">
+		            <input id="Button1" type="button" value="我是普通按钮" /><br />
+		            <input id="Submit1" type="submit" value="点我就提交" /><br />
+		            <button> 我也是普通按钮 </button><br />
+		        </form>
+		        <script type="text/javascript">
+		 		 $("#frmTest :button").addClass('red');
+		        </script>-->
+		        <!--4.9 :checked-->
+		        <!--4.10  :selected选中状态选择器 :selected选择器只能获取<select>下拉列表框中全部处于选中状态的<option>选项元素。-->
+		        <!--<form id="formId" action="#">
+		           <select id="formOp" multiple="multiple">
+		           	<option value="0">苹果</option>
+		           	<option value="1" selected="selected">香蕉</option>
+		           	<option value="2">橘子</option>
+		           	<option value="3" selected="selected">梨</option>
+		           	<option value="4">火龙果</option>
+		           </select>
+		        </form>
+		        <div id="tip"></div>
+		        <script type="text/javascript">
+		       var text =  $("#formId :selected").text();
+		       alert(text);
+		       $("#tip").html(text);
+		        </script>-->
+		        <!--5.1 使用attr()方法控制元素的属性 attr()方法的作用是设置或者返回元素的属性，其中attr(属性名)格式是获取元素属性名的值，attr(属性名，属性值)格式则是设置元素属性名的值。-->
+		      <!--  <h3>使用attr()设置元素的属性</h3>
+		        <a href="http://hao123.com">点我可以走</a>
+		        <div id="divId"></div>
+		        <script type="text/javascript">
+		        var ahref = $("a").attr("href");
+		        $("#divId").html(ahref);
+		        </script>-->
+		        <!--5.2 操作元素的内容:使用html()和text()方法操作元素的内容，当两个方法的参数为空时，表示获取该元素的内容，而如果方法中包含参数，则表示将参数值设置为元素内容。
+		        html()方法可以获取元素的HTML内容，因此，原文中的格式代码也被一起获取，而text()方法只是获取元素中的文本内容-->
+				<!--<div id="html"></div>
+				<div id="text"></div>
+				<script type="text/javascript">
+		 			var content = "<br>又胖了</br>";
+		 			$("#html").html(content);
+		 			$("#text").text(content);
+				</script>-->
+				<!--5.3 操作元素的样式 ：通过addClass()和css()方法可以方便地操作元素中的样式，前者括号中的参数为增加元素的样式名称，后者直接将样式的属性内容写在括号中。-->
+				<!--<div>我会改变颜色的哦！</div>
+				<script type="text/javascript">
+				// $("#content").css({"background-color":"red","color":"white"});
+				$("div").addClass('red');
+				</script>-->
+				<!--<div id="content" class="blue black">我脱下了蓝色的外衣</div>
+				<script type="text/javascript">
+		 		 $("#content").removeClass("blue black");
+				</script>-->
+				<!--5.5 使用append()方法向元素内追加内容,append(content)方法的功能是向指定的元素中追加内容，被追加的content参数，可以是字符、HTML元素标记，还可以是一个返回字符串内容的函数;-->
+				
+				<!--<h3>调用append追加内容</h3>
+				<script type="text/javascript">
+				function htmll(){
+					var $html = "<div title='我的就是我的'>通过append追加</div>";
+					return $html;
+				}
+				$("body").append(htmll());
+				</script>-->
+				<!--5.6 使用appendTo()方法向被选元素内插入内容 , $(content).appendTo(selector)参数content表示需要插入的内容，参数selector表示被选的元素，即把content内容插入selector元素内，默认是在尾部。-->
+				<!--<div><span class="blue">小乌龟</span></div>
+				<script type="text/javascript">
+					var div2 = "<span class='red'>小王八</span>";
+					$(div2).appendTo("div");
+				</script>-->
+				<!--5.7 使用before()和after()在元素前后插入内容 使用before()和after()方法可以在元素的前后插入内容，它们分别表示在整个元素的前面和后面插入指定的元素或内容，调用格式分别为：
+				$(selector).before(content)和$(selector).after(content)
+				其中参数content表示插入的内容，该内容可以是元素或HTML字符串。-->
+		       <!--<span class="red">交个朋友吧！</span>
+		       <script type="text/javascript">
+		       	var sp = "<span class='green'>土豪</span>";
+		       	$(".red").after(sp).before(sp);
+		       </script>-->
+		       <!--5.8 使用clone()方法复制元素 调用clone()方法可以生成一个被选元素的副本，即复制了一个被选元素，包含它的节点、文本和属性，它的调用格式为：
+  				$(selector).clone() 其中参数selector可以是一个元素或HTML内容。-->
+  				<!--<div class="red"> 我的小心肝</div>
+				<script type="text/javascript">
+				var too= $(".red").clone();
+				//clone 完不要忘记添加到 html文档中；
+				$("body").append(too);
+				</script>-->
+				<!--5.9替换内容 replaceWith()和replaceAll()方法都可以用于替换元素或元素中的内容，但它们调用时，内容和被替换元素所在的位置不同，分别为如下所示：
+				$(selector).replaceWith(content)和$(content).replaceAll(selector)参数selector为被替换的元素，content为替换的内容。-->
+				<!--<span class="red">我是屌丝？</span>
+				<script type="text/javascript">
+					$(".red").replaceWith("<span class='blue'>我是土豪</span>");
+				</script>-->
+				<!--5.10 使用wrap()和wrapInner()方法包裹元素和内容；wrap()和wrapInner()方法都可以进行元素的包裹，但前者用于包裹元素本身，后者则用于包裹元素中的内容，它们的调用格式分别为：
+				$(selector).wrap(wrapper)和$(selector).wrapInner(wrapper)参数selector为被包裹的元素，wrapper参数为包裹元素的格式。-->
+				<!--<span class="red">哈哈哈</span>
+				<script type="text/javascript">
+					//$(".red").wrap('<div></div>');
+					$(".red").wrapInner("<i></i>");
+				</script>-->
+				<!--5.11 使用each()方法遍历元素使用each()方法可以遍历指定的元素集合，在遍历时，通过回调函数返回遍历元素的序列号，它的调用格式为：
+				$(selector).each(function(index))参数function为遍历时的回调函数，index为遍历元素的序列号，它从0开始。-->
+				<!--<span class="red">苹果</span>
+				<span class="red">苹果</span>
+				<span class="red">苹果</span>
+				<span class="red">苹果</span>
+				<span class="red">苹果</span>
+				<script type="text/javascript">
+				$("span").each(function(index){
+					if (index === 2) {
+						$(this).removeClass("red").addClass("green");
+					};
+				});
+				</script>-->
+				<!--5.12 使用remove()和empty()方法删除元素 remove()方法删除所选元素本身和子元素，该方法可以通过添加过滤参数指定需要删除的某些元素，而empty()方法则只删除所选元素的子元素。-->
+				<!--<span class="red">苹果</span>
+				<span class="red">苹果</span>
+				<span class="green">苹果</span>
+				<span class="red">苹果</span>
+				<span class="red">苹果</span>
+				<script type="text/javascript">
+				//$("span").remove(".red");
+				$("span").empty();
+				</script>-->
+				<!--6.1 页面加载时触发ready()事件 ready()事件类似于onLoad()事件，但前者只要页面的DOM结构加载后便触发，而后者必须在页面全部元素加载成功才触发，ready()可以写多个，按顺序执行。此外，下列写法是相等的：
+  				$(document).ready(function(){})等价于$(function(){});-->
+  				<!--<div id="tip"></div>
+  				<button id="idbtn">点击</button>
+  				<script type="text/javascript">
+  						$(function(){
+  							$("#idbtn").bind("click",function(){
+  								$("#tip").html('我被点击了！');
+  							});
+  						})
+  				</script>-->
+  				<!--6.2 使用bind()方法绑定元素的事件 bind()方法绑定元素的事件非常方便，绑定前，需要知道被绑定的元素名，绑定的事件名称，事件中执行的函数内容就可以，它的绑定格式如下：$(selector).bind(event,[data] function)
+				参数event为事件名称，多个事件名称用空格隔开，function为事件执行的函数。-->
+				<!--<button id="btn">点击或者移除失效</button>
+				<script type="text/javascript">
+				$(document).ready(function(){
+					$("#btn").bind("click mouseout",function(){
+						$(this).attr("disabled",true);
+					});
+				});
+				</script>-->
+				<!--6.3 使用hover()方法切换事件hover()方法的功能是当鼠标移到所选元素上时，执行方法中的第一个函数，鼠标移出时，执行方法中的第二个函数，实现事件的切实效果，调用格式如下：$(selector).hover(fun1()，fun2());
+				fun1()参数为移到所选元素上触发的函数，fun2()参数为移出元素时触发的函数。-->
+				<!--<div>你是土豪吗？</div>
+				<script type="text/javascript">
+				$(function(){
+					$("div").hover(function(){
+						$(this).html("我是啊");
+					},function(){
+						$(this).html("我真是啊！");
+					});
+				});
+				</script>-->
+				<!--6.4 (此方法 在Jquery 1.9.0后不支持)使用toggle()方法绑定多个函数toggle()方法可以在元素的click事件中绑定两个或两个以上的函数，同时，它还可以实现元素的隐藏与显示的切换，绑定多个函数的调用格式如下：$(selector).toggle(fun1(),fun2(),funN(),...)
+				其中，fun1，fun2就是多个函数的名称-->
+				<!--<div>点击显示不同的内容</div>
+				<script type="text/javascript">
+				$(function(){
+					$("div").toggle(
+						function(){
+						$(this).html('你是土豪吗？');
+					},function(){
+						$(this).html('目前还不是！');
+					},function(){
+						$(this).html('以后肯定会是的！')
+					})
+				});
+				</script>-->
+				<!--6.5 使用unbind()方法移除元素绑定的事件 unbind()方法可以移除元素已绑定的事件，它的调用格式如下：
+					$(selector).unbind(event,fun)
+					其中参数event表示需要移除的事件名称，多个事件名用空格隔开，fun参数为事件执行时调用的函数名称。-->
+					<!--<input id="btn" type= "button" value="移除事件" />
+					<div>土豪我们做朋友吧</div>
+					<script type="text/javascript">
+					$(function(){
+						$("div").bind("click",function(){
+							$(this).addClass("red");
+							//双击事件 为dblclick 
+						}).bind("dblclick",function(){
+							$(this).css("background-color","black");
+						});
+						$("#btn").bind("click",function(){
+							$(this).attr("disabled",true);
+							$("div").unbind("dblclick");
+						})
+					});
+					</script>-->
+					<!--6.6 使用one()方法绑定元素的一次性事件 one()方法可以绑定元素任何有效的事件，但这种方法绑定的事件只会触发一次，它的调用格式如下：
+					$(selector).one(event,[data],fun)参数event为事件名称，data为触发事件时携带的数据，fun为触发该事件时执行的函数。-->
+					<!--<div>被点击的次数</div>
+					<script type="text/javascript">
+					$(function(){
+						var intI = 0;
+						$("div").one("click",function(){
+							intI ++;
+							$(this).html("我被点击了("+intI+")次");
+						})
+					})
+					</script>-->
+					<!--6.7调用trigger()方法手动触发指定的事件 trigger()方法可以直接手动触发元素指定的事件，这些事件可以是元素自带事件，也可以是自定义的事件，总之，该事件必须能执行，它的调用格式为：$(selector).trigger(event)
+					其中event参数为需要手动触发的事件名称。-->
+					<!--<div>改变自定义颜色</div>
+					<script type="text/javascript">
+					$(function(){
+						$("div").bind("mycolor",function(){
+							$(this).addClass("red");
+						});
+						$("div").trigger("mycolor");
+					})
+					</script>-->
+					<!--6.8 文本框的focus和blur事件 focus事件在元素获取焦点时触发，如点击文本框时，触发该事件；而blur事件则在元素丢失焦点时触发，如点击除文本框的任何元素，都会触发该事件。-->
+					<!--<input type="text" id="mytest" />
+					<div></div>
+					<script type="text/javascript">
+					$(function(){
+						$("#mytest").bind("focus",function(){
+							$("div").html('请输入你的姓名');
+						}).bind("blur",function(){
+							if($(this).val().length == 0){
+								$("div").html('姓名不能为空！');
+							}
+						})
+					})
+					</script>-->
+					<!--6.9下拉列表框的change事件 当一个元素的值发生变化时，将会触发change事件，例如在选择下拉列表框中的选项时，就会触change事件-->
+					<!--<select id="selt">
+						<option value="0">苹果</option>
+						<option value="1">香蕉</option>
+						<option value="2">葡萄</option>
+						<option value="3">西瓜</option>
+					</select>
+					<script type="text/javascript">
+					 $(function(){
+					 	$("select").bind("change",function(){
+					 		if($(this).val()=='3'){
+					 			$(this).css("background-color","red");
+					 		}
+					 	})
+					 });
+					</script>-->
+					<!--6.10 (jquery1.9不再支持该方法)使用live()方法绑定元素的事件 与bind()方法相同，live()方法与可以绑定元素的可执行事件，除此相同功能之外，live()方法还可以绑定动态元素，即使用代码添加的元素事件，格式如下：$(selector).live(event,[data],fun)
+ 					参数event为事件名称，data为触发事件时携带的数据，fun为触发该事件时执行的函数。-->
+ 					<!--<script type="text/javascript">
+ 					$(function(){
+ 					 	$("#btn").live("click",function(){
+ 					 		$(this).attr("disabled",true);
+ 					 	})
+ 					 	$("body").append("<button id='btn'>点击变为不可用</button>");
+ 					});
+ 					</script>-->
+
+  		</body>
+
 </html>
